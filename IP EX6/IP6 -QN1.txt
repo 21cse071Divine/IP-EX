@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LIST</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <style>
+      /* CSS styling for the page */
+      body {
+        font-family: sans-serif;
+      }
+      button {
+        font-size: 1.2em;
+        padding: 0.5em;
+        background-color: aqua;
+        color: black;
+      }
+      li {
+        margin: 10px 0;
+	padding: 10px;
+	color: black;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+      }
+    </style>
+        <script>
+            $(document).ready(function () {
+                $("button").click(function list() {
+                    var content = Math.floor(Math.random() * 10)+1;
+                    var color = '#' + Math.floor(Math.random() * 16777215).toString(16); 
+                    var fixingcontent="<li style='background-color:"+ color + ";'>"+ content +"</li>";
+                    $("#list").append(fixingcontent);
+                });
+            });
+            
+        </script>
+    </head>
+    <body
+        style="background-color:lavender;">
+    <center>
+        <h2 style="color: red">THE UNORDERED LIST IS:</h2>
+            <ul id="list" style="list-style-position: inside">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            </ul>
+        <button onclick="list">ADD ITEM</button>
+    </center>
+        </body>
+</html>
